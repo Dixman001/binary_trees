@@ -6,12 +6,14 @@
  * @parent: a pointer to the parent node
  * @Value: value of the new node
  * @return: a pointer to the new node or NULL on fail.
- **/
+ */
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+	/* decalration of new node */
 	binary_tree_t *newNode;
 
+	/* memory allocation */
 	newNode = (binary_tree_t *)mlloc(sizeof(binary_tree_t));
 
 	if (newNode == NULL)
@@ -20,10 +22,12 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	
 	}
 
+	/* assignment of node property */
 	newNode->parent = parent;
 	newNode->n = value;
 	newNode->left = NULL;
 	newNode->right = NULL;
 
+	/* return pointer to the node */
 	return (newNode);
 }
